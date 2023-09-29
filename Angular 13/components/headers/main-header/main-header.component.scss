@@ -1,0 +1,85 @@
+@import 'styles/material/media-queries';
+
+.mat-toolbar {
+  background: var(--toolbar-color) !important;
+  box-shadow: inset 0px -1px 0px var(--default-color-2);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 101;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 0px 16px;
+  .logo {
+    width: 74px;
+    max-height: 100%;
+    display: flex;
+    cursor: pointer;
+    img {
+      max-width: 100%;
+      object-fit: contain;
+    }
+  }
+  .search {
+    min-width: 500px;
+    @include for-landscape-tablet {
+      min-width: 250px;
+      margin: 0 0 0 25px;
+    }
+  }
+
+  .right-nav {
+    display: flex;
+    height: 100%;
+    .exit-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid #e2e3f4;
+      padding-left: 15px;
+      .mat-stroked-button {
+        padding: 0 9px;
+        .mat-button-wrapper {
+          span {
+            font-size: 19px;
+          }
+        }
+      }
+    }
+  }
+}
+
+::ng-deep.mat-menu-panel {
+  min-width: 210px !important;
+  min-height: auto !important;
+  .mat-menu-content {
+    .mat-menu-item {
+      line-height: 36px;
+      height: auto;
+      letter-spacing: 0.15px;
+      color: var(--link-color);
+      opacity: 0.87;
+      font-family: var(--font-primary-medium);
+      font-size: var(--font-size-sm);
+      span {
+        color: var(--default-color-1);
+        margin: 0 10px 0 0;
+        font-size: 20px;
+        position: relative;
+        top: 5px;
+        max-width: 19px;
+        &.presentIcon {
+          top: 3px !important;
+        }
+      }
+      &.orange-color {
+        color: var(--link-red-color);
+        span {
+          color: var(--link-red-color);
+        }
+      }
+    }
+  }
+}

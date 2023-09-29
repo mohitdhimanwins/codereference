@@ -1,0 +1,73 @@
+@import "styles/material/media-queries";
+
+.copyright {
+    position: fixed;
+    bottom: 0;
+    background: var(--white-color);
+    left: 50px;
+    right: 0;
+    transition: 0.5s;
+    padding: 6px 80px 6px 14px;
+    z-index: 2;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    @include for-mini-desktop {
+        left: 200px;
+    }
+    @include for-tablet {
+        padding: 6px 88px 6px 14px;
+    }
+    .inner-container {
+        width: 100%;
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .copyright-text {
+                font-size: 14px;
+                color: var(--grey-color);
+                @include for-tablet {
+                    font-size: 11px;
+                }
+            }
+            .footer-listing {
+                ul {
+                    display: flex;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    align-items: center;
+                    gap: 20px;
+                    @include for-tablet {
+                        gap: 5px;
+                    }
+                    li {
+                        font-size: 14px;
+                        letter-spacing: 0.15px;
+                        @include for-tablet {
+                            font-size: 11px;
+                        }
+                        a {
+                            color: var(--black-color);
+                            opacity: 0.87;
+                            text-decoration: none;
+                        }
+                        ::ng-deep select {
+                            border: 1px solid #ddd;
+                            padding: 6px 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.full-width {
+        left: 0;
+        transition: 0s;
+        .inner-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    }
+}

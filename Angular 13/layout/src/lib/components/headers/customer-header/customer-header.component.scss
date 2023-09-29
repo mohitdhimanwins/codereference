@@ -1,0 +1,116 @@
+@import 'styles/material/media-queries';
+
+.credit-header {
+  border-bottom: 1px solid var(--default-color-2);
+  background-color: #ffffff;
+  padding: 19px 0;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  @include for-mobile {
+    padding: 4px 0;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @include for-mobile {
+        gap: 10px;
+      }
+      .logo {
+        width: 74px;
+        max-height: 100%;
+        display: flex;
+        cursor: pointer;
+        height: 37px;
+        img {
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .dealer-name {
+      font-size: var(--font-size-xxl);
+      line-height: 150%;
+      letter-spacing: 0.15px;
+      color: var(--black-color);
+      text-transform: capitalize;
+      font-family: var(--font-primary-semibold);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      @include for-mobile {
+        font-size: var(--font-size-regular);
+      }
+    }
+    .profile {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      .header-link {
+        font-family: var(--font-primary-medium);
+        font-size: var(--font-size-xl);
+        line-height: 22px;
+        letter-spacing: 0.46px;
+        color: var(--default-color-1);
+        border: 1px solid var(--default-color-2);
+        padding: 7px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: top;
+        @include for-mobile {
+          border: 0px solid #ddd;
+          padding: 0px;
+        }
+        mat-icon {
+          vertical-align: middle;
+          @include for-mobile {
+            font-size: var(--font-size-xxl);
+          }
+        }
+      }
+    }
+  }
+}
+.commonGrid {
+  @include for-mobile {
+    display: flex;
+    align-items: center;
+  }
+  
+} 
+
+::ng-deep.mat-menu-panel {
+  min-width: 210px !important;
+  .mat-menu-content {
+    padding: 0px !important;
+    .mat-menu-item {
+      line-height: 36px;
+      height: 36px;
+      font-size: var(--font-size-xs);
+      letter-spacing: 0.15px;
+      color: var(--link-color);
+      opacity: 0.87;
+      span {
+        color: var(--default-color-1);
+        margin: 0 10px 0 0;
+        font-size: var(--font-size-xxl);
+        position: relative;
+        top: 5px;
+        max-width: 19px;
+      }
+      &.orange {
+        color: var(--link-red-color);
+        span {
+          color: var(--link-red-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+<div class="gridView commonGrid">
+  <button mat-button [ngClass]="{ 'mat-active': menuTrigger.menuOpen }" [matMenuTriggerFor]="grid" #menuTrigger="matMenuTrigger">
+    <div class="icon">
+      <span class="material-icons"> grid_view </span>
+    </div>
+  </button>
+  <mat-menu #grid="matMenu" xPosition="before">
+    <ng-container *ngIf="dmsImport; else manualDealBtn">
+      <button mat-menu-item [disabled]="!hasUpdateDealPermission" [class.disabled]="!hasUpdateDealPermission" [matMenuTriggerFor]="menu">
+        <span class="material-icons"> add </span>
+        {{ 'header.quickActions.newDeal' | translate }}
+      </button>
+    </ng-container>
+
+    <ng-template #manualDealBtn>
+      <button [disabled]="!hasUpdateDealPermission" [class.disabled]="!hasUpdateDealPermission" mat-menu-item (click)="createManualDeal()">
+        <span class="material-icons"> add </span>
+        {{ 'header.quickActions.newDeal' | translate }}
+      </button>
+    </ng-template>
+
+    <button mat-menu-item (click)="paymentCalculateDialog()">
+      <span class="material-icons">calculate</span>
+      {{ 'header.quickActions.paymentCalculator' | translate }}
+    </button>
+    <button mat-menu-item (click)="captureAppDialog()" *featureFlagIf="creditAppsEnabledFlag">
+      <span class="material-icons">send icon</span>
+      {{ 'common.creditApp' | translate }}
+    </button>
+
+    <button mat-menu-item>
+      <span class="material-icons">help</span>
+      {{ 'common.help' | translate }}
+    </button>
+
+    <ng-template [permissionIf]="AvailablePermissions.ViewCreditDashboard">
+      <button mat-menu-item *ngIf="creditDashoardUrl" (click)="navigateToCreditDashboard()">
+        <span class="material-icons">credit_score</span>
+        {{ 'header.quickActions.700creditDashboard' | translate }}
+      </button>
+    </ng-template>
+  </mat-menu>
+</div>
+
+<mat-menu #menu="matMenu" class="newDealDropdown">
+  <button mat-menu-item (click)="createDmsDeal()">
+    <span>{{ 'deals.dmsImport' | translate }}</span>
+  </button>
+  <button mat-menu-item (click)="createManualDeal()">
+    <span>{{ 'deals.manualImport' | translate }}</span>
+  </button>
+</mat-menu>
+
+

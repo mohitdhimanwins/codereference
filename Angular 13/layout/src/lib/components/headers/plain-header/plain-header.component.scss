@@ -1,0 +1,20 @@
+.emptyLayoutHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px auto 20px;
+    .user{
+      p{
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+}
+
+.loggedInUser{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 170px;
+  display: inline-block;
+  vertical-align: middle;
+}

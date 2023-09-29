@@ -1,0 +1,14 @@
+.commonGrid {
+    height: 100%;
+    .mat-button {
+      height: 100%;
+      .icon {
+        display: flex;
+        justify-content: center;
+        color: var(--default-color-1);
+      }
+      &.mat-active{
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }

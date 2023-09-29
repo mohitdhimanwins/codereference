@@ -1,0 +1,31 @@
+<base-dialog [title]="'common.sessionInfo' | translate" (dialogClose)="close()">
+  <div class="formContainer" body>
+    <ng-container *ngIf="userVm$ | async as vm">
+      <div class="stepperBodyContent">
+        <div class="contact-wrapper">
+          <div class="contact-heading">{{ 'locations.orgId' | translate }}</div>
+          <div class="contact-details">{{ vm.orgId }}</div>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-heading">{{ 'common.userid' | translate }}</div>
+          <div class="contact-details">{{ vm.id }}</div>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-heading">{{ 'common.sessionId' | translate }}</div>
+          <div class="contact-details copy-icon">
+            {{ vm?.sessionId }}
+            <span
+              class="copyIcon material-icons"
+              #tooltip="matTooltip"
+              [cdkCopyToClipboard]="vm?.sessionId"
+              (click)="copy(tooltip)"
+              [matTooltip]="(copied ? 'common.copied' : 'common.copy') | translate"
+            >
+              content_copy
+            </span>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</base-dialog>

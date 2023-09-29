@@ -1,0 +1,13 @@
+<div class="credit-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="logo-wrapper">
+        <div class="logo"><img [src]="userOrgInfo?.logo | safeUrl" alt="image" width="74" /></div>
+      </div>
+      <div class="dealer-name">{{ userOrgInfo.name }}</div>
+      <div class="profile commonGrid">
+        <span class="header-link"> <mat-icon>lock</mat-icon> {{ (isTablet ? 'common.secure' : 'common.creditInformation') | translate }} </span>
+      </div>
+    </div>
+  </div>
+</div>

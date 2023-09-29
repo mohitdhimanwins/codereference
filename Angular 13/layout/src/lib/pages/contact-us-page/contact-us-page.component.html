@@ -1,0 +1,46 @@
+<div class="contact-us-page">
+  <div class="contact-headline">{{ 'common.contactUs' | translate }}</div>
+  <ng-container *ngIf="vm$ | async as vm">
+    <div class="stepperBody">
+      <div class="stepperBodyContent">
+        <div class="back-btn-part">
+          <div class="backBtn">
+            <button mat-stroked-button type="button" class="buttonOutline border-primary" tabindex="90" color="primary" (click)="back()">
+              <span class="mat-button-wrapper"> <span class="material-icons"> chevron_left</span> {{ 'common.back' | translate }} </span>
+            </button>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="start top">
+          <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <div class="contact-wrapper">
+              <div class="contact-heading">{{ 'fields.DealerShip' | translate }}</div>
+              <div class="contact-details">{{ vm?.name }}</div>
+              <div class="contact-details" *ngIf="vm?.fullAddress">{{ vm.fullAddress }}</div>
+
+              <ng-container *ngIf="!vm?.fullAddress">
+                <div class="contact-details">{{ vm?.orgAddressSuitNo }}</div>
+                <div class="contact-details">{{ vm?.orgCity }}, {{ vm?.orgStateZip }}</div>
+              </ng-container>
+
+              <div class="contact-details">{{ vm?.phone }}</div>
+              <div class="contact-details">
+                <a [href]="vm?.website" target="_blank">{{ vm.website }}</a>
+              </div>
+            </div>
+          </div>
+
+          <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+            <div class="contact-wrapper">
+              <div class="contact-heading">{{ 'fields.salesContact' | translate }}</div>
+              <div class="contact-details">{{ vm?.salesPersonName }}</div>
+              <div class="contact-details">{{ vm?.salesPersonPhone }}</div>
+              <div class="contact-details">
+                <a href="mailto:{{ vm?.salesPersonEmail }}">{{ vm?.salesPersonEmail }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

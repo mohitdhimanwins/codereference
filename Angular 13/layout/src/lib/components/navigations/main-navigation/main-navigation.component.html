@@ -1,0 +1,49 @@
+<perfect-scrollbar>
+  <mat-nav-list>
+    <span class="gradient-color" [ngClass]="gradientClass"></span>
+    <ul class="navbar-nav" *ngFor="let menuItem of menuItems; let u = index">
+      <li>
+        <ng-container *ngTemplateOutlet="menuList; context: { $implicit: menuItem }"></ng-container>
+      </li>
+    </ul>
+  </mat-nav-list>
+  <ng-template #menuList let-menu let-hasSubmenu="hasSubmenu">
+    <a
+      *ngIf="menu.title"
+      class="nav-link"
+      [class.has-submenu]="hasSubmenu"
+      [class.active]="checkIfMenuIsActive(menu)"
+      [ngClass]="menu?.class"
+      href="javascript:void(0);"
+      [class.expanded]="menu.isExpanded && !hasSubmenu"
+      [routerLink]="menu.route"
+      [state]="{ refresh: refreshRoute }"
+      (click)="dropdownClicked(menu, $event)"
+    >
+      <span [ngClass]="{ 'material-icons icon': menu.icon, indicator: !menu.icon }">{{ menu.icon }} </span>
+      <span class="menu-title" [class.hide]="hideMenuName(menu.entityType)">{{ menu.title | translate }}</span>
+
+      <ng-container *ngIf="menu.entityKey">
+        <ng-container *ngIf="menu.data$ | async as vm">
+          <span *ngIf="vm['loaded']" class="menu-number">{{ vm['count'] }}</span>
+        </ng-container>
+      </ng-container>
+
+      <span class="material-icons arrowIcon" *ngIf="menu?.children">
+        {{ menu.isExpanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+      </span>
+    </a>
+
+    <ng-container *ngIf="menu?.children">
+      <ul class="navbar-inner-menu" [class.sub-menu]="menu.title && !!menu.children" role="menu" [class.show]="menu.isExpanded">
+        <li *ngFor="let subMenu of menu.children; let u = index">
+          <ng-container *ngTemplateOutlet="menuList; context: { $implicit: subMenu, hasSubmenu: menu.title && !!menu.children }"></ng-container>
+        </li>
+      </ul>
+    </ng-container>
+  </ng-template>
+</perfect-scrollbar>
+<div class="trigger" (click)="toggleSidebar()">
+  <div class="hotkey"><span>⌘ H</span></div>
+  <div [matTooltip]="tooltipText | translate" class="material-icons nav-icon">chevron_left</div>
+</div>

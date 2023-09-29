@@ -1,0 +1,17 @@
+<perfect-scrollbar>
+  <mat-nav-list>
+    <ul class="navbar-nav">
+      <li *ngFor="let menu of menuItems">
+        <a class="nav-link" [routerLink]="menu.route" routerLinkActive="active">
+          <span class="material-icons icon">{{menu.icon}}</span>
+          <span class="menu-title">{{ menu.title | translate: { orgType: (orgType | orgType), Default: menu.title} }}</span>
+        </a>
+      </li>
+    </ul>
+  </mat-nav-list>
+</perfect-scrollbar>
+
+<div class="trigger" (click)="toggleSidebar()">
+  <div class="hotkey"><span>⌘ H</span></div>
+  <div [matTooltip]="tooltipText | translate" class="material-icons nav-icon">chevron_left</div>
+</div>

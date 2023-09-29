@@ -1,0 +1,119 @@
+@import 'styles/material/media-queries';
+@import 'styles/material/ios-mixins';
+
+#layout {
+  .mat-sidenav-container {
+    position: relative;
+    padding-top: 48px;
+    background-color: var(--default-color-3);
+    z-index: 3;
+    ::ng-deep .mat-drawer-side {
+      top: 48px !important;
+      position: fixed;
+      height: 100%;
+      left: 0;
+      transition: width 0.35s ease-in-out;
+      z-index: 100;
+      visibility: visible !important;
+      transform: translate3d(0, 0, 0) !important;
+      display: block;
+      border-right: 1px solid #e2e3f4;
+    }
+    .mat-sidenav-content {
+      padding: 0px 14px 16px;
+      overflow: auto;
+      margin-left: 70px !important;
+      height: calc(100vh - 91px);
+      position: relative;
+      .gradient-overlay {
+        position: absolute;
+      }
+      &.deal-worksheet {
+        padding-bottom: 91px;
+      }
+
+      @include for-ios-touch-callout {
+        height: calc(100vh - 120px);
+
+        &.deal-worksheet {
+          padding-bottom: 91px;
+        }
+      }
+
+      @include for-mini-desktop {
+        margin-left: 200px !important;
+      }
+    }
+  }
+  &.aside-small {
+    .mat-sidenav-container {
+      .mat-sidenav-content {
+        margin-left: 70px !important;
+        ::ng-deep.amount-tab {
+          left: 70px;
+        }
+      }
+    }
+    ::ng-deep {
+      .copyright {
+        left: 70px;
+      }
+      .mat-nav-list {
+        width: 70px;
+        .navbar-nav {
+          li {
+            a {
+              justify-content: center;
+              .menu-title {
+                display: none;
+              }
+              .icon {
+                margin-right: 0px;
+              }
+              &.active {
+                color: var(--white-color);
+              }
+            }
+          }
+        }
+        .caret {
+          span {
+            transform: rotate(180deg);
+          }
+        }
+        &:hover {
+          width: 200px;
+          transition: width 0.3s ease;
+          .navbar-nav {
+            li {
+              a {
+                justify-content: inherit;
+                color: var(--primary);
+                .menu-title {
+                  display: block;
+                }
+                .icon {
+                  margin: 0 15px 0 0;
+                }
+                &.active {
+                  transition: 0.5s;
+                  color: var(--white-color);
+                }
+                &:hover {
+                  transition: 0.5s;
+                  color: var(--white-color);
+                }
+              }
+            }
+          }
+        }
+      }
+      .trigger {
+        padding: 13px 2px;
+        .nav-icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

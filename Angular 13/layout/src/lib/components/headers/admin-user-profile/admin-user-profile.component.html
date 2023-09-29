@@ -1,0 +1,33 @@
+
+<div class="profile commonGrid">
+  <button [ngClass]="{ 'mat-active': menuTrigger.menuOpen }" mat-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger">
+    <div class="profileInner" *ngIf="user">
+      <div class="icon">{{ user.userName | shortName }}</div>
+      <div class="profileName">
+        {{ user.userName }}
+        <span matTooltip="{{ user.orgName + ' (' + user.orgId + ')' }}">{{ user.orgName }} ({{ user.orgId }})</span>
+      </div>
+      <div class="caret" [class.opened]="menuTrigger.menuOpen">
+        <span class="material-icons"> arrow_drop_down </span>
+      </div>
+    </div>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container>
+      <button mat-menu-item (click)="dialogMFAProfile()">
+        <span class="material-icons"> settings </span>
+        {{ 'header.userProfile.profileSettings' | translate }}
+      </button>
+
+      <button mat-menu-item (click)="resetPassword()">
+        <span class="material-icons"> password </span>
+        {{ 'header.userProfile.changePassword' | translate }}
+      </button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item class="orange-color" isDirtyInvalidForm (clicked)="logoutUser()">
+        <span class="material-icons">logout</span>
+        {{ 'common.logout' | translate }}
+      </button>
+    </ng-container>
+  </mat-menu>
+</div>

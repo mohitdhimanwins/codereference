@@ -1,0 +1,12 @@
+<div class="layout" *ngIf="featureFlagsLoaded$ | async; else matLoaderTemplate">
+  <div [class.layoutInner]="fullWidth">
+    <router-outlet></router-outlet>
+  </div>
+  <main-footer *ngIf="hideMainFooter" [fullWidth]="fullWidth"></main-footer>
+</div>
+
+<mat-loader *ngIf="loading$ | async"></mat-loader>
+<ng-template #matLoaderTemplate>
+  <mat-loader></mat-loader>
+</ng-template>
+

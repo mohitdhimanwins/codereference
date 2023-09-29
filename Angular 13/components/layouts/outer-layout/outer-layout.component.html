@@ -1,0 +1,14 @@
+<div class="layout" [ngClass]="{'show': !hideCookieConsent }">
+  <div class="layoutInner">
+    <plain-header [clientData]="clientData" [user]="user$ | async"></plain-header>
+    <div class="emptyLayoutContent">
+      <mat-card>
+        <router-outlet></router-outlet>
+      </mat-card>
+    </div>
+  </div>
+  <cookie-consent (closeConsent)="closeCookieConsent()" (acceptConsent)="acceptCookieConsent()" *ngIf="!hideCookieConsent"></cookie-consent>
+  <main-footer [fullWidth]="true" class="fullWidthFooter"></main-footer>
+</div>
+
+<mat-loader *ngIf="loading$ | async"></mat-loader>

@@ -1,0 +1,17 @@
+.layout {
+    height: 100vh;
+    .layoutInner {
+        height: calc(100% - 43px);
+        overflow: auto;
+        padding: 15px;
+    }
+    ::ng-deep.copyright {
+        &.full-width {
+            .inner-container {
+                width: 100%;
+                max-width: 100%!important;
+            }
+        }
+    }
+}
+

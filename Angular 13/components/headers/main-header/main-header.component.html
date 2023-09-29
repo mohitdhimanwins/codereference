@@ -1,0 +1,27 @@
+<mat-toolbar class="headerNavigation">
+  <div class="logo" routerLink="/">
+    <img [src]="clientLogo | safeUrl" (error)="onError($event)" *ngIf="defaultValues.isLoaded" width="74" alt="image" />
+  </div>
+  <div class="search">
+    <global-search></global-search>
+  </div>
+  <div class="right-nav">
+    <notifications></notifications>
+    <quick-actions [dmsImport]="data.isDmsEnabled" [credit700Enabled]="data.hasCredit700Enabled" [creditDashoardUrl]="data.creditDashoardUrl"></quick-actions>
+    <themes [themes]="themes" *ngIf="themes?.length > 1"></themes>
+    <user-profile
+      [user]="user"
+      [isEnableMFA]="defaultValues.isEnableMFA"
+      [isFormDirty]="defaultValues.isFormDirty"
+      [isFormValid]="defaultValues.isFormValid"
+      [defaultLoaded]="defaultValues.isLoaded"
+    ></user-profile>
+
+    <div class="exit-button" *ngIf="user.isImpersonatedUser">
+      <button mat-stroked-button color="primary" class="border-primary buttonOutline" (click)="hanleExitImpersonation()">
+        <span class="material-icons"> exit_to_app </span>
+        {{ 'common.exit' | translate }}
+      </button>
+    </div>
+  </div>
+</mat-toolbar>

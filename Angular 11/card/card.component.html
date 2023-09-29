@@ -1,0 +1,17 @@
+<mat-card class="card" [ngClass]="getClass()" >
+    <header *ngIf="!noTitle">
+        <heading headingLevel="H2" headingStyle="headingRegular" content="{{title}}" noMargin=true></heading>
+        <a [ngClass]="{'disabled':disabled}" *ngIf="actionLabel" (click)="onAction(actionLabel)">{{actionLabel}}</a>
+    </header>
+    <div class="CardContent">
+        <ng-content></ng-content>
+    </div>
+    <div class="loader" *ngIf="isLoading">
+        <mat-spinner color="primary" mode="indeterminate" diameter="40"></mat-spinner>
+    </div>
+    <div class="progress" *ngIf="withProgress" [ngClass]="progressColor">
+        <mat-progress-bar mode="determinate"
+            [value]="progressPercentage">
+        </mat-progress-bar>
+    </div>
+</mat-card>

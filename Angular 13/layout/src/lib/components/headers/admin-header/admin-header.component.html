@@ -1,0 +1,11 @@
+<mat-toolbar class="headerNavigation">
+  <div class="left-nav">
+    <div class="logo" routerLink="/"><img src="assets/core/images/admin/logo.svg" alt="image" /></div>
+  </div>
+  <div class="right-nav">
+    <admin-user-profile
+      [user]="user$ | async"
+      [isEnableMFA]="isEnableMFA$ | async"
+    ></admin-user-profile>
+  </div>
+</mat-toolbar>

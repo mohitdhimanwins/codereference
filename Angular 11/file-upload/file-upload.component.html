@@ -1,0 +1,17 @@
+<field-wrapper [label]="label" [fieldRequired]="required">
+  <div class="browseBtn" *ngIf="!fileName">
+    <span class="uploadText">{{uploadButtonText}}</span>
+    <input type="file" 
+          (change)="onFileChange($event)" 
+          (click)="$event.target.value=null"
+          [accept]="accept" 
+          [filename]="filename"
+        />
+    <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+  </div>
+  <div class="uploadedFileName" *ngIf="fileName">
+    {{fileName}}
+
+    <mat-icon svgIcon="close" (click)="onDelete()"></mat-icon>
+  </div>
+</field-wrapper>

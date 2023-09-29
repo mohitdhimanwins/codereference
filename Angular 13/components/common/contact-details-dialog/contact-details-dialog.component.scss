@@ -1,0 +1,34 @@
+
+// @import 'styles/common';
+
+.stepperBody .stepperBodyContent {
+	padding: 30px;
+	border-bottom: 1px solid var(--default-color-2);
+}
+
+.contact-heading{
+    font-size: var(--font-size-regular);
+    line-height: 20px;
+    letter-spacing: .15px;
+    color: #0009;
+    font-family: var(--font-primary-medium);
+    margin: 0 0 7px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-details{
+    margin-bottom: 10px;
+    font-size: var(--font-size-regular)!important;
+    line-height: 20px;
+    letter-spacing: .15px;
+    color: #000000de;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-items: center;
+}
+
+.normal-font{
+    font-family: var(--font-primary-regular);
+}

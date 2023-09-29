@@ -1,0 +1,18 @@
+<div class="gridView commonGrid" >
+  <button mat-button [ngClass]="{ 'mat-active': menuTrigger.menuOpen }" [matMenuTriggerFor]="grid"  #menuTrigger="matMenuTrigger">
+    <div class="icon">
+      <span class="material-icons"> wb_sunny </span>
+    </div>
+  </button>
+  <mat-menu #grid="matMenu">
+    <button
+      mat-menu-item
+      *ngFor="let theme of themes"
+      [ngClass]="{ 'mat-active': (activeTheme$ | async) === theme.code }"
+      (click)="changeTheme(theme.code)"
+    >
+      <span class="material-icons"> </span>
+      {{ 'themes.' + theme.code | translate }}
+    </button>
+  </mat-menu>
+</div>

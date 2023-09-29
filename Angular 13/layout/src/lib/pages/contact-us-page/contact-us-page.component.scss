@@ -1,0 +1,49 @@
+
+
+.contact-us-page {
+    background-color: #fff;
+    height: 100vh;
+    .contact-headline {
+        font-size: 22px;
+        line-height: 143%;
+        letter-spacing: 0.15px;
+        color: rgba(0, 0, 0, 0.87);
+        border-top: 1px solid var(--default-color-2);
+        border-bottom: 1px solid  var(--default-color-2);
+        padding: 14px 16px;
+        margin-bottom: 0px;
+    }
+    .stepperBody {
+        .stepperBodyContent {
+            padding: 20px 16px;
+            .back-btn-part {
+                margin-bottom: 20px;
+            }
+            .contact-wrapper {
+                margin: 0 0 10px 0;
+                .contact-heading {
+                    font-size:var(--font-size-xl);
+                    line-height: 20px;
+                    letter-spacing: 0.15px;
+                    color: rgba(0, 0, 0, 0.87);
+                    font-family: var(--font-primary-medium);
+                    margin-bottom: 10px;
+                    display: block;
+                }
+                .contact-details {
+                    font-size:var( --font-size-regular);
+                    line-height: 25px;
+                    letter-spacing: 0.15px;
+                    color: rgba(0, 0, 0, 0.87);
+                    align-items: center;
+                    margin: 0;
+                    a{
+                        color: var(--primary-color);
+                        text-decoration:none;
+                        font-family: var(--font-primary-medium);
+                    }
+                }
+            }
+        }
+    }
+}

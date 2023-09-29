@@ -1,0 +1,89 @@
+<div class="gridView commonGrid">
+  <button mat-button>
+    <div class="icon">
+      <span class="material-icons-outlined" (click)="toggle()">notifications</span>
+      <div class="badge">4</div>
+    </div>
+  </button>
+</div>
+
+<ng-container>
+  <div class="side-panel" [ngClass]="{ show: isNotificationPanelOpened }">
+    <div class="side-panel-header">
+      Notifications
+      <button type="button" class="close" (click)="toggle()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+    <div class="side-panel-body">
+      <div class="panel-card">
+        <div class="panel-header">Record has been updated <span class="status blue"></span></div>
+        <div class="panel-body">
+          <div class="panel-body-inner">
+            <div class="panel-id leads-bg-color">
+              <div class="indicator-element ng-star-inserted"></div>
+              <div class="caption">Lead # 415</div>
+            </div>
+            <div class="panel-desc">Michal Brink</div>
+            <div class="panel-desc">1m ago</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-target">Open <span class="material-icons-outlined"> arrow_forward </span></div>
+          <div class="panel-target"><span class="material-icons-outlined">close </span>Dismiss</div>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-header">Record has been updated <span class="status blue"></span></div>
+        <div class="panel-body">
+          <div class="panel-body-inner">
+            <div class="panel-id deals-bg-color">
+              <div class="indicator-element ng-star-inserted"></div>
+              <div class="caption">Deal # 415</div>
+            </div>
+            <div class="panel-desc">Michal Brink</div>
+            <div class="panel-desc">1m ago</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-target">Open <span class="material-icons-outlined"> arrow_forward </span></div>
+          <div class="panel-target"><span class="material-icons-outlined">close </span>Dismiss</div>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-header">Record has been updated <span class="status blue"></span></div>
+        <div class="panel-body">
+          <div class="panel-body-inner">
+            <div class="panel-id quotes-bg-color">
+              <div class="indicator-element ng-star-inserted"></div>
+              <div class="caption">Quote # 415</div>
+            </div>
+            <div class="panel-desc">Michal Brink</div>
+            <div class="panel-desc">1m ago</div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-target">Open <span class="material-icons-outlined"> arrow_forward </span></div>
+          <div class="panel-target"><span class="material-icons-outlined">close </span>Dismiss</div>
+        </div>
+      </div>
+      <div class="panel-card">
+        <div class="panel-header">New message from [Lender]<span class="status blue"></span></div>
+        <div class="panel-body">
+          <div class="panel-body-inner">
+            <div class="panel-desc">Michal Brink</div>
+            <div class="panel-desc">1m ago</div>
+          </div>
+          <div class="panel-info">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat
+            sunt. Exercitation veniam consequat sunt.
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="panel-target"><span class="material-icons-outlined"> reply </span>Reply</div>
+          <div class="panel-target"><span class="material-icons-outlined">close </span>Dismiss</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

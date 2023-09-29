@@ -1,0 +1,45 @@
+.stepperBodyContent {
+  border: 1px solid var(--default-color-2);
+  .contact-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    .contact-heading {
+      width: 100%;
+      border-right: 1px solid var(--default-color-2);
+      border-bottom: 1px solid var(--default-color-2);
+      height: 40px;
+      background: #f9f9fd;
+      padding: 2px 5px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.17px;
+      color: #000000de;
+      max-width: 450px;
+      font-family: var(--font-primary-medium);
+    }
+    .contact-details {
+      width: 100%;
+      padding: 2px 5px;
+      height: 40px;
+      border-bottom: 1px solid var(--default-color-2);
+      text-align: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      font-family: var(--font-primary-medium);
+    }
+
+    .copy-icon {
+      display: flex;
+      gap: 10px;
+      .material-icons {
+        cursor: pointer;
+        font-size: 17px;
+      }
+    }
+  }
+}

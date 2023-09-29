@@ -1,0 +1,121 @@
+@import 'styles/material/media-queries';
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.active-row-table .mat-row {
+  cursor: pointer;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+.no-data {
+  text-align: center;
+  margin: 20px;
+  font-family: var(--font-primary-medium);
+  height: calc(100% - 106px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep.ps-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mat-column-action {
+  align-items: center;
+  text-align: center !important;
+  flex: 1 0 15%;
+  width: 15%;
+}
+
+.search-results {
+  height: calc(100vh - 250px);
+  &.remit {
+    height: calc(100vh - 300px);
+    @include for-lg-desktop{
+      height: calc(100vh - 340px);   
+    }
+    @include for-tablet{
+      height: calc(100vh - 400px);   
+    }
+  }
+  @include for-landscape-tablet{
+    &.deals {
+      height: calc(100vh - 303px);
+    }   
+  }
+}
+
+.title {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-70%);
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100%;
+
+  small {
+    color: #eaeaea;
+  }
+}
+
+.loadMore {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 1);
+
+  ::ng-deep.mat-spinner {
+    margin: 0 auto;
+    width: 30px !important;
+    height: 30px !important;
+
+    svg {
+      width: 30px !important;
+      height: 30px !important;
+
+      circle {
+        stroke: #9ea1b8;
+      }
+    }
+  }
+}
+
+table {
+  table-layout: fixed;
+}
+
+th,
+td {
+  &::before {
+    right: 0 !important;
+  }
+}
+
+.ellipsis span {
+  overflow: hidden;
+  width: auto;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &::before {
+    right: 0 !important;
+  }
+}
+.mat-column-lastUpdatedUtc,
+.mat-column-modifyDateTimeUtc,
+.mat-column-lastModifiedDateTimeUtc {
+  white-space: pre-wrap !important;
+}
+.mat-row.hidden {
+  display: none;
+}

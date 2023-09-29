@@ -1,0 +1,21 @@
+<div class="Drawer">
+    <mat-drawer-container  (backdropClick)="close()"> 
+        <mat-drawer #drawer mode="over" position="end" (keydown.escape)="close()">
+            <div class="DrawerContentWrapper">
+                <div class="headingWrapper" *ngIf="title">
+                    <span *ngIf="showPreviousNextButtons" class="previousNextButton" [ngClass]="enablePreviousButton?'':'disableButton'"  (click)="onClickPrevNextButton()"><mat-icon svgIcon="_path_left" ></mat-icon><span>Prev</span></span>
+                    <heading headingLevel="H2" headingStyle="headingRegular" [withUnderline]="!showPreviousNextButtons"> 
+                        {{title}}
+                    </heading>
+                    <span *ngIf="showPreviousNextButtons" class="previousNextButton" [ngClass]="enableNextButton?'':'disableButton'" (click)="onClickNextButton()"><span class="nextButton">Next</span><mat-icon svgIcon="_path_right" ></mat-icon></span>
+                    <button mat-icon-button  (click)="onDrawerClose()">
+                        <mat-icon svgIcon="close"></mat-icon>
+                    </button>
+                </div>
+                <div>
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </mat-drawer>
+    </mat-drawer-container>
+</div>

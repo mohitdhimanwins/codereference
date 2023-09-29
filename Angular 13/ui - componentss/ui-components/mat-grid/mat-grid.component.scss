@@ -1,0 +1,82 @@
+:host{
+overflow: auto;
+height:100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+.active-row-table .mat-row {
+  cursor: pointer;
+  &:hover {
+    background-color: #f7f7f7;
+  }
+}
+
+.mat-row {
+  &.hidden {
+    display: none;
+  }
+}
+.no-data {
+  text-align: center;
+  padding: 30px;
+  font-size: var(--font-size-xl);
+  line-height: 160%;
+  letter-spacing: 0.05px;
+  color: var(--grey-color);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  ::ng-deep {
+    mat-checkbox {
+      &.mat-checkbox-disabled {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+
+.mat-column-action {
+  align-items: center;
+  text-align: center !important;
+  flex: 1 0 10%;
+  width: 10%;
+}
+
+.ellipsis span {
+  overflow: hidden;
+  width: auto;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  &::before {
+    right: 0 !important;
+  }
+}
+.mat-column-term,
+.mat-column-lastUpdated,
+.mat-column-modifyDateTimeUtc,
+.mat-column-lastModifiedDateTimeUtc {
+  white-space: pre !important;
+}
+.controlDisabled {
+  background: none !important;
+}
+.mat-column-taxRate {
+  white-space: inherit !important;
+}
+.content-wrap {
+  text-overflow: initial !important;
+  white-space: initial !important;
+}
+
+.search-results {
+  border-radius: 8px;
+  
+}

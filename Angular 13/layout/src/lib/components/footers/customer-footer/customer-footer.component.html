@@ -1,0 +1,20 @@
+<div class="footer">
+  <div [ngClass]="fullLayout ? 'container-fluid': 'container'">
+    <div class="footer-inner">
+      <div class="copy-right">{{ 'common.poweredBy' | translate }} One Dealer Lane © {{ date }}</div>
+      <div class="footer-links">
+        <ul>
+          <li>
+            <a href="javascript:void(0)" (click)="openContactAppDialog()">{{ 'common.contactUs' | translate }}</a>
+          </li>
+          <li>
+            <a [href]="userOrgInfo.privacyPolicy ? userOrgInfo.privacyPolicy : privacyPolicyLink" target="_blank" >{{ 'footer.privacyPolicy' | translate }}</a>
+          </li>
+          <li> 
+            <a [href]="userOrgInfo.termsOfUse ? userOrgInfo.termsOfUse : termsOfUseLink" target="_blank" >{{ 'footer.termsOfUse' | translate }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

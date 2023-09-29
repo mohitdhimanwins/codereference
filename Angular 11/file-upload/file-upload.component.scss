@@ -1,0 +1,51 @@
+@import '../../../../../assets/scss/common-style.scss';
+
+field-wrapper{    
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.browseBtn{
+    position: relative;
+    margin: 2px 0 0 20px;
+    overflow: hidden;
+  
+    @include for-mobile {
+      margin-top: 20px;
+    }
+    .uploadText {
+      position: absolute;
+      content: "Upload";
+      left: 0;
+      top: 0;
+      border: 1px dashed var(--blue);
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-align: center;
+      z-index: 0;
+      @include bodyTextSmallHighlight;
+      color:var(--blue);
+    }
+    input{
+      opacity: 0;
+      height: 42px;
+      cursor: pointer;
+    }
+}
+.uploadedFileName {
+    @include bodyTextSmall;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px var(--gray-shadow);
+    padding: 10px;
+    border-radius: 3px;
+    background-color: var(--extra-light-silver);
+    margin: 0 0 0 20px;
+    width: 100%;
+    min-width: 250px;
+    ::ng-deep .mat-icon{
+      height: 15px;
+      width: 15px;
+    }
+}

@@ -1,0 +1,21 @@
+<div class="copyright" [ngClass]="{ 'full-width': fullWidth }">
+  <div class="inner-container">
+    <div class="footer-inner">
+      <div class="copyright-text">{{ 'footer.copyright' | translate }} © {{ date }} One Dealer Lane. {{ 'footer.allRights' | translate }}.</div>
+      <div class="footer-listing">
+        <ul>
+          <li>
+            <a (click)="openSessionInfo()" href="javascript:void(0)">{{ 'common.sessionInfo' | translate }}</a>
+          </li>
+          <li>
+            <a [href]="privacyPolicyLink | configLink | async" target="_blank" >{{ 'footer.privacyPolicy' | translate }}</a>
+          </li>
+          <li>
+            <a [href]="termsOfUseLink | configLink | async" target="_blank">{{ 'footer.termsOfUse' | translate }}</a>
+          </li>
+          <li><language></language></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

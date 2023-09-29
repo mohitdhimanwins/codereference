@@ -1,0 +1,8 @@
+<div class="emptyLayoutHeader">
+    <div class="logo">
+        <img [src]="'assets/core/images/client-logos/' + clientData.logo" [alt]="clientData.logo" *ngIf="clientData" />
+    </div>
+    <div class="user" *ngIf="user">
+        <p>{{ 'common.loggedInAsText' | translate }} <strong><span class="loggedInUser" [matTooltip]="user.userName">{{user.userName}}</span> ({{user.email}})</strong></p>
+    </div>
+</div>

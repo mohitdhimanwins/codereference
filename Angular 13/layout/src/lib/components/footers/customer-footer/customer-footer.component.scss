@@ -1,0 +1,114 @@
+@import "styles/material/media-queries";
+
+.container-fluid {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+.contactSupport {
+    background-color: #ffffff;
+    padding: 16px 0;
+    position: fixed;
+    bottom: 54px;
+    width: 100%;
+    left: 0;
+}
+
+.contactSupport .supportInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ContactUs {
+    span img {
+        vertical-align: middle;
+    }
+
+    font-family: var(--font-primary-medium);
+    font-size: var(--font-size-sm);
+    line-height: 22px;
+    letter-spacing: 0.46px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.footer {
+    border-top: 1px solid var(--default-color-2);
+    background-color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 14px;
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+         @include for-mobile{
+          flex-direction: column-reverse;
+          align-items: center;
+         }
+        .copy-right {
+            font-size: var(--font-size-xs);
+            line-height: 12px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 0.15px;
+            color: #9ea1b8;
+        }
+
+        .footer-links {
+            @include for-mobile{
+              margin:0 0 5px 0;
+            }
+            ul {
+                display: flex;
+                gap:10px;
+                margin: 0px;
+                padding: 0px;
+                list-style: none;
+                @include for-mobile{
+                  gap:12px;
+                }
+                li {
+                    font-size: var(--font-size-regular);
+                    line-height: 143%;
+                    letter-spacing: 0.15px;
+                    position: relative;
+                    a {
+                        color: rgba(0, 0, 0, 0.87);
+                        text-decoration: none;
+                    }
+                    @include for-mobile{
+                        font-size: var(--font-size-xs);   
+                        &::before{
+                            content: "";
+                            background: #e2e3f4;
+                            height: 100%;
+                            width: 1px;
+                            display: inline-block;
+                            right: -7px;
+                            position: absolute;
+                            
+                        }
+                        &:last-child{
+                            &::before{
+                             width:0;
+                            }  
+                        } 
+                    }
+
+                }
+            }
+        }
+    }
+}
+.small-container {
+    max-width: 731px;
+}
+.full-width {
+    max-width: 1140px !important;
+}

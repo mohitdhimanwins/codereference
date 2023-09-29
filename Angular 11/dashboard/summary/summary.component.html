@@ -1,0 +1,63 @@
+<full-width-card>
+    <div class="noCompanyContent" *ngIf="companyList.length === 0">
+        <span class="contentLabel">Let's get started by creating a company! </span>
+        <div class="actionContainer">
+            <button mat-raised-button color="primary" (click)="openDialog('COMPANY')">Add company</button>
+            <button mat-raised-button color="primary" (click)="openDialog('IDEA')">Add idea</button>
+        </div>
+    </div>
+    <div class="companyListContent" *ngIf="companyList.length > 0">
+        <div class="header">
+            <heading headingLevel="H2" headingStyle="headingRegular" content="My Companies and Ideas"></heading>
+            <div class="actionsContainer">
+                <button mat-stroked-button color="primary" class="small" (click)="openDialog('COMPANY')"> Add
+                    company</button>
+                <button mat-stroked-button color="primary" class="small" (click)="openDialog('IDEA')"> Add
+                    idea</button>
+            </div>
+        </div>
+        <ul class="companyList">
+                <div *ngFor="let company of companyList" class="companyItem">
+                    <li withAvatar="true"
+                        [avatarImageUrl]="company?.logoUrl || '../assets/images/companyDefaultImage.png'">
+                        <div class="companyItemContent">
+                            <div class="contentItem primaryDescription">
+                                <heading class="comapanyTitle" headingLevel="H2" headingStyle="headingRegular"
+                                    (click)="goToProfileDashboard(company)" content="{{company.name}}" noMargin=true>
+                                </heading>
+                                <div class="subtitle" *ngIf="company.incorporationYear"> Founded in
+                                    {{company?.incorporationYear}}</div>
+                            </div>
+                            <div class="numberStepper contentItem" *ngIf="!company.isCompleted">
+                                <a color="primary" (click)="openEditCompanyDialog(company)">
+                                    Complete company profile
+                                </a>
+                            </div>
+                            <ng-container *ngIf="company.isCompleted">
+                                <div class="contentItem invOpportunities">
+                                    <label>Collaborations</label>
+                                    <span class="value">{{company?.collaborations}}</span>
+                                </div>
+                                <div class="companiesProgressBar contentItem timeline">
+                                    <horizontal-timeline [milestones]="getGrowthStageData(company)">
+                                    </horizontal-timeline>
+                                </div>
+                                <div class="companiesProgressBar contentItem  upcomingTask">
+                                    <div class="title">{{company?.goal?.description || '-'}}</div>
+                                    <div class="date">
+                                        <span *ngIf="!company?.goal?.dueDate">-</span>
+                                        <span *ngIf="company?.goal?.dueDate">
+                                            {{company?.goal?.dueDate | date: "dd MMM yyyy"}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <div class="contentItem companyIcon">
+                                <mat-icon [svgIcon]="company.isIncorporated ?'company':'idea'"></mat-icon>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+        </ul>
+    </div>
+</full-width-card>

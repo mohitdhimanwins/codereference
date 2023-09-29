@@ -1,0 +1,56 @@
+.commonGrid {
+  .mat-button {
+    height: 100%;
+    .profileInner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap:15px;
+      .impersonate-icon {
+        display: flex;
+      }
+      .icon {
+        width: 32px;
+        height: 32px;
+        background-color: var(--link-red-color);
+        font-size: 16px;
+        color: #fff !important;
+        border-radius: 50%;
+        text-transform: uppercase;
+      }
+      .profileName {
+        line-height: normal;
+        text-align: left;
+        font-size: 14px;
+        color: var(--link-color);
+        opacity: 0.87;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        span {
+          display: block;
+          color: var(--primary);
+          font-size: 12px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .caret {
+        align-items: center;
+        display: flex;
+        &.opened {
+          span {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    &.mat-active {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+.profile {
+  border-left: 1px solid var(--default-color-2);
+}

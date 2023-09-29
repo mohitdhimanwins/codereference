@@ -1,0 +1,36 @@
+<base-dialog title="{{ 'fields.ContactInformation' | translate }}" contentClass="update_profile_dialog" (dialogClose)="close()">
+  <div class="stepperContent" body>
+    <div class="container">
+      <div class="stepperCard">
+        <div class="stepperBody">
+          <div class="stepperBodyContent">
+            <div fxLayout="row wrap" fxLayoutGap="30px grid" fxLayoutAlign="start top">
+              <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <strong class="contact-heading">{{ 'fields.DealerName' | translate }}</strong>
+                <p class="contact-details">{{ userOrgInfo.name }}</p>
+              </div>
+              <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <strong class="contact-heading">{{ 'fields.DealerAddress' | translate }}</strong>
+                <p class="contact-details">{{ userOrgInfo.fullAddress }}</p>
+              </div>
+              <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <strong class="contact-heading">{{ 'fields.DealershipPhone' | translate }}</strong>
+                <p class="contact-details">{{ userOrgInfo.phone }}</p>
+              </div>
+              <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <strong class="contact-heading">{{ 'fields.DealershipWebsite' | translate }}</strong>
+                <p class="contact-details">{{ userOrgInfo.website }}</p>
+              </div>
+              <div fxFlex="33.33%" fxFlex.lg="33.33%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+                <strong class="contact-heading">{{ 'fields.SalesPerson' | translate }}</strong>
+                <p class="contact-details">{{ userOrgInfo?.salesPersonName }}</p>
+                <strong class="contact-heading normal-font">{{ userOrgInfo?.salesPersonPhone }} </strong>
+                <strong class="contact-heading normal-font">{{ userOrgInfo?.salesPersonEmail }}</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</base-dialog>

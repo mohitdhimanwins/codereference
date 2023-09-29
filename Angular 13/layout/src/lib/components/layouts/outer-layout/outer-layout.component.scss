@@ -1,0 +1,32 @@
+.layout {
+    height: calc(100vh - 44px);
+    overflow: auto;
+    &.show{
+        height: calc(100vh - 160px);  
+        .layoutInner {
+            margin: 0 auto 0px;     
+        }   
+    }
+    .layoutInner {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        
+        .fullWidthFooter {
+            width: 100%;
+            display: block;
+            ::ng-deep {
+                .copyright {
+                    left: 0;
+                }
+            }
+        }
+        &.bottomSpace {
+            margin-bottom: 210px;
+        }
+    }
+}
+.emptyLayoutContent {
+    mat-card {
+        padding: 0;
+    }
+}

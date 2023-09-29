@@ -1,0 +1,29 @@
+<div id="layout" [class.aside-small]="!isExpandedSidebar" *ngIf="featureFlagsLoaded$ | async; else matLoaderTemplate">
+  <main-header
+    [user]="user$ | async"
+    [clientData]="clientData"
+    [clientLogo]="clientlogo$ | async"
+    [defaultValues]="defaultVm$ | async"
+    [data]="integrationManagementViewModel$ | async"
+    (exitImpersonation)="exitImpersonation()"
+  ></main-header>
+  <mat-sidenav-container>
+    <mat-sidenav class="sidenav" opened mode="side" [disableClose]="true">
+      <main-navigation
+        [tooltipText]="isExpandedSidebar ? 'common.collapseMenu' : 'common.expandMenu'"
+        [gradientClass]="gradientClass"
+        [expanded]="isExpandedSidebar"
+        (toggle)="toggleSidebar()"
+      ></main-navigation>
+    </mat-sidenav>
+    <mat-sidenav-content fixed>
+      <span class="gradient-overlay" [class.inner-gradient]="isDetailsPage" [ngClass]="gradientClass"></span>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <main-footer [fullWidth]="false"></main-footer>
+</div>
+<mat-loader *ngIf="loading$ | async"></mat-loader>
+<ng-template #matLoaderTemplate>
+  <mat-loader></mat-loader>
+</ng-template>

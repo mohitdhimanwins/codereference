@@ -1,0 +1,63 @@
+@import '../../../../assets/scss/mixins/typography.scss';
+
+.Drawer {
+    ::ng-deep {
+        .mat-drawer-backdrop {
+            position: fixed;
+        }
+        .mat-drawer-container {
+            position: fixed;
+            z-index:1000;
+        }
+
+        .mat-drawer {
+            position: fixed;
+            right: 0;
+        }
+    }
+    .DrawerContentWrapper {
+        padding: 10px 20px;
+    }
+
+    .headingWrapper {
+        display: flex;
+        justify-content: space-between;
+
+        button { 
+            margin-top: 10px;
+
+            &:focus {
+                background-color: transparent;
+            }
+
+            ::ng-deep .mat-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+    }
+
+}
+
+.previousNextButton{
+    cursor: pointer;
+    margin-top: 10px;
+    display: flex;
+    ::ng-deep span{
+        margin-top: 5px;
+        @include bodyTextSmallDarkGrey
+    }
+    ::ng-deep .nextButton{
+        margin-right: 10px;
+    }
+}
+.disableButton{
+   ::ng-deep mat-icon{
+       @include bodyTextSmallLight
+   }
+   ::ng-deep span{
+    margin-top: 5px;
+    @include bodyTextSmallLight
+}
+}

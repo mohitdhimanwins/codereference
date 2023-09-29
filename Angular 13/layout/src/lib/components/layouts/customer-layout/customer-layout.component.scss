@@ -1,0 +1,16 @@
+@import 'styles/material/media-queries';
+
+.layout {
+  .layoutInner {
+    padding: 79px 0 33px;
+    @include for-mobile {
+      padding: 46px 0 48px;
+    }
+    &.padding15 {
+      padding: 15px 15px 48px 15px;
+      @include for-mobile {
+        padding: 15px 15px 64px 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<div id="layout" [class.aside-small]="!isExpandedSidebar">
+  <admin-header [user$]="user$" [clientData]="clientData" [clientLogo]="clientlogo$ | async" [defaultsLoaded]="defaultsLoaded$ | async"></admin-header>
+  <mat-sidenav-container>
+    <mat-sidenav class="sidenav" opened mode="side" [disableClose]="true">
+      <admin-navigation
+        [orgType]="orgType$ | async"
+        [expanded]="isExpandedSidebar"
+        [tooltipText]="isExpandedSidebar ? 'common.collapseMenu' : 'common.expandMenu'"
+        (toggle)="toggleSidebar()"
+      ></admin-navigation>
+    </mat-sidenav>
+    <mat-sidenav-content fixed>
+      <span class="gradient-overlay" [class.inner-gradient]="isDetailsPage" [ngClass]="gradientClass"></span>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <main-footer [fullWidth]="false"></main-footer>
+</div>
+<mat-loader *ngIf="loading$ | async"></mat-loader>

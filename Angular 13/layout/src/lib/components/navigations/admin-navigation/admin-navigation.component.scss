@@ -1,0 +1,99 @@
+:host {
+  height: 100%;
+  display: block;
+}
+perfect-scrollbar {
+  height: calc(100% - 48px);
+  padding-bottom: 49px;
+  background-color: var(--white-color);
+  ::ng-deep.ps-content {
+    height: 100%;
+  }
+}
+.mat-nav-list {
+  width: 200px;
+  transition: width 0.35s ease-in-out;
+  padding: 8px;
+  min-height: 100%;
+  .navbar-nav {
+    padding: 0px;
+    list-style: none;
+    margin: 0px;
+    li {
+      margin: 0px 0 12px 0;
+      font-size: var(--font-size-xs);
+      transition: 0.5s;
+      text-transform: uppercase;
+      font-family: var(--font-primary-bold);
+      a {
+        border: 1.5px solid #e2e3f4;
+        color: var(--primary);
+        background: #f9f9fd;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        transition: 0.5s;
+        border-radius: 4px;
+        cursor: pointer;
+        letter-spacing: 1px;
+        position: relative;
+        .icon {
+          margin-right: 15px;
+          font-size: var(--font-size-xxl);
+          line-height: normal;
+          position: relative;
+          width: 20px;
+          height: 20px;
+        }
+        &.active {
+          background-color: var(--dashboard-color);
+          border: 1.5px solid var(--dashboard-color);
+          transition: 0.5s;
+          color: var(--white-color);
+        }
+        &:hover {
+          background-color: var(--dashboard-color);
+          border: 1.5px solid var(--dashboard-color);
+          color: var(--white-color);
+        }
+      }
+    }
+  }
+}
+.trigger {
+  color: var(--menu-default-color);
+  position: absolute;
+  width: 100%;
+  border-top: 1px solid var(--menu-default-color);
+  line-height: normal;
+  cursor: pointer;
+  transition: 0.5s;
+  bottom: 48px;
+  padding: 13px 18px;
+  z-index: 9;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  align-items: center;
+
+  .hotkey {
+    background-color: var(--primary);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    padding: 4px 6px;
+    display: flex;
+    align-items: center;
+    span {
+      font-family: var(--font-primary-bold);
+      font-size: var(--font-size-10);
+      line-height: 10px;
+      letter-spacing: 0.4px;
+      color: var(--white-color);
+    }
+  }
+  .nav-icon {
+    font-size: var(--font-size-xl);
+    line-height: normal;
+    position: relative;
+  }
+}

@@ -1,0 +1,133 @@
+@import 'src/assets/scss/mixins/typography.scss';
+
+.card {
+    padding: 1em;
+    position: relative;
+    overflow: hidden;
+    &.fullHeight {
+        height: 100%;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+
+        h2 {
+            @include sectionTitle;
+            margin: 5px 0;
+        }
+    }
+
+    .CardContent {
+        overflow: auto;
+    }
+
+    &.withBorderColor{
+        border-radius: 8px;
+        &.top{
+            &.ORANGE {
+                border-top: 5px solid var(--dark-orange) !important;
+            }
+            &.TEAL {
+                border-top: 5px solid var(--teal) !important;
+            }
+            &.VOILET {
+                border-top: 5px solid var(--violet-color) !important;
+            }
+        }
+        &.bottom{
+            &.ORANGE {
+                border-bottom: 5px solid var(--dark-orange) !important;
+            }
+            &.TEAL {
+                border-bottom: 5px solid var(--teal) !important;
+            }
+            &.VOILET {
+                border-bottom: 5px solid var(--violet-color) !important;
+            }
+        }
+        &.right{
+            &.ORANGE {
+                border-right: 5px solid var(--dark-orange) !important;
+            }
+            &.TEAL {
+                border-right: 5px solid var(--teal) !important;
+            }
+            &.VOILET {
+                border-right: 5px solid var(--violet-color) !important;
+            }
+        }
+        &.left{
+            &.ORANGE {
+                border-left: 5px solid var(--dark-orange) !important;
+            }
+            &.TEAL {
+                border-left: 5px solid var(--teal) !important;
+            }
+            &.VOILET {
+                border-left: 5px solid var(--violet-color) !important;
+            }
+        }
+    }
+
+
+    &.withProgress {
+        border-radius: 8px;
+
+        &.TEAL {
+            border: 1px solid var(--teal);
+    
+            ::ng-deep .mat-progress-bar-fill::after {
+                background-color: var(--teal)
+            }
+        }
+    
+        &.ORANGE {
+            border: 1px solid var(--orange-color);
+    
+            ::ng-deep .mat-progress-bar-fill::after {
+                background-color: var(--orange-color)
+            }
+        }
+    
+        &.BLUE {
+            border: 1px solid var(--blue);
+    
+            ::ng-deep .mat-progress-bar-fill::after {
+                background-color: var(--blue)
+            }
+        }
+    
+        &.VIOLET {
+            border: 1px solid var(--violet-color);
+    
+            ::ng-deep .mat-progress-bar-fill::after {
+                background-color: var(--violet-color)
+            }
+        }
+
+        .progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    
+
+}
+.loader {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background: var(--box-shadow-default);
+}

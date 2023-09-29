@@ -1,0 +1,9 @@
+<div class="layout" *ngIf="vm$ | async as userOrgInfo">
+  <customer-header [userOrgInfo]="userOrgInfo" *ngIf="!hideHeader"></customer-header>
+  <div class="layoutInner" [class.padding15]="hideHeader">
+    <router-outlet></router-outlet>
+  </div> 
+  <customer-footer [userOrgInfo]="userOrgInfo" [fullLayout]="fullLayout" [linkConfigItems]="linkConfigItems$ | async"></customer-footer>
+</div>
+
+<mat-loader *ngIf="loading$ | async"></mat-loader>

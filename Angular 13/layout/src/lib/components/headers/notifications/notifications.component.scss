@@ -1,0 +1,182 @@
+
+
+.side-panel {
+  width: 415px;
+  right: -415px;
+  position: fixed;
+  height: 100%;
+  background: var(--white-color);
+  transition: 0.5s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  &.show {
+    right: 0;
+  }
+  .side-panel-header {
+    padding: 16px 60px 16px 16px;
+    border-bottom: 1px solid #e2e3f4;
+    font-size: var(--font-size-xxl);
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    font-family: var(--font-primary-semibold);
+    .close {
+      cursor: pointer;
+      font-family: var(--font-primary-medium);
+      color: #9ea1b8;
+      text-shadow: 0 1px 0 #fff;
+      padding: 1rem;
+      background-color: transparent;
+      border: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .side-panel-body {
+    padding: 16px;
+    height: calc(100% - 111px);
+    overflow: auto;
+    .panel-card {
+      border: 1px solid #e2e3f4;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 0 0 16px 0;
+      transition: 0.5s;
+      &:hover {
+        background: #f9f9fd;
+      }
+      &:last-child {
+        margin: 0;
+      }
+      .panel-header {
+        font-size: var(--font-size-xl);
+        line-height: 24px;
+        color: rgba(0, 0, 0, 0.87);
+        letter-spacing: 0.15px;
+        margin: 0 0 12px 0;
+        font-family: var(--font-primary-semibold);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .status {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          display: block;
+        }
+      }
+      .panel-body {
+        .panel-body-inner {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          margin: 0 0 20px 0;
+          .panel-id {
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: var(--font-size-xs);
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            font-family: var(--font-primary-bold);
+            text-transform: uppercase;
+            .indicator-element {
+              width: 4px;
+              height: 24px;
+              border-radius: 3px;
+              min-width: 4px;
+              display: inline-block;
+            }
+            .caption {
+              padding: 0 6px;
+            }
+          }
+          .panel-desc {
+            font-size: var(--font-size-xs);
+            line-height: normal;
+            color: rgba(0, 0, 0, 0.6);
+            letter-spacing: 0.15px;
+          }
+        }
+        .panel-info {
+          font-size: var(--font-size-regular);
+          line-height: 22px;
+          letter-spacing: 0.46px;
+          color: rgba(0, 0, 0, 0.87);
+          margin: 0 0 15px 0;
+          white-space: normal;
+        }
+      }
+      .panel-footer {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: space-between;
+        .panel-target {
+          font-size: var(--font-size-sm);
+          line-height: 22px;
+          letter-spacing: 0.46px;
+          color: var(--primary);
+          text-transform: uppercase;
+          font-family: var(--font-primary-medium);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          span {
+            font-size: var(--font-size-xl);
+          }
+        }
+      }
+    }
+  }
+}
+
+.leads-bg-color {
+  background: linear-gradient(90deg, rgba(203, 43, 131, 0.1) 0%, rgba(203, 43, 131, 0.001) 99.07%);
+  .indicator-element {
+    background: var(--leads-color);
+  }
+  .caption {
+    color: var(--leads-color);
+  }
+}
+
+.quotes-bg-color {
+  background: linear-gradient(90deg, rgba(248, 138, 19, 0.1) 0%, rgba(254, 151, 3, 0.001) 99.07%);
+  .indicator-element {
+    background: var(--quotes-color);
+  }
+  .caption {
+    color: var(--quotes-color);
+  }
+}
+.credit-app-bg-color {
+  background: linear-gradient(90deg, rgba(51, 188, 183, 0.1) 0%, rgba(168, 209, 54, 0.001) 99.07%, rgba(51, 188, 183, 0.001) 99.07%);
+  .indicator-element {
+    background: var(--credit-app-color);
+  }
+  .caption {
+    color: var(--credit-app-color);
+  }
+}
+.deals-bg-color {
+  background: linear-gradient(90deg, rgba(169, 209, 52, 0.1) 0%, rgba(169, 209, 52, 0.001) 99.07%);
+  .indicator-element {
+    background: var(--deals-color);
+  }
+  .caption {
+    color: var(--deals-color);
+  }
+}
+.remittance-bg-color {
+  background: linear-gradient(90deg, rgba(171, 122, 224, 0.1) 0%, rgba(26, 127, 217, 0.001) 99.07%);
+  .indicator-element {
+    background: var(--remittance-color);
+  }
+  .caption {
+    color: var(--remittance-color);
+  }
+}

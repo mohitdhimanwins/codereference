@@ -1,0 +1,118 @@
+<form #form="ngForm">
+  <fieldset [disabled]="disableControl">
+    <div fxLayout="row wrap" fxLayoutGap="30px grid" fxLayoutAlign="start center">
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <config-items-dropdown
+          [tabindex]="0"
+          [name]="fieldName('type')"
+          [(ngModel)]="insuranceInfo.type"
+          [submitted]="submitted"
+          [bindName]="true"
+          [label]="'fields.insuranceType' | translate"
+          [placeholder]="'fields.insuranceType' | translate"
+          [type]="customerInsuranceType"
+          [required]="isRequired"
+          [disableControl]="disableControl"
+        >
+        </config-items-dropdown>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <text-input
+          [name]="fieldName('company')"
+          [(ngModel)]="insuranceInfo.company"
+          [submitted]="submitted"
+          [label]="'fields.Company' | translate"
+          [placeholder]="'fields.Company' | translate"
+          [maxlength]="100"
+          [required]="isRequired"
+          [disabled]="disableControl"
+        ></text-input>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <uppercase-control
+          [name]="fieldName('policyNo')"
+          [(ngModel)]="insuranceInfo.policyNo"
+          [submitted]="submitted"
+          [label]="'fields.PolicyNo' | translate"
+          [placeholder]="'fields.PolicyNo' | translate"
+          [maxlength]="50"
+          [required]="isRequired"
+          [disabled]="disableControl"
+        >
+        </uppercase-control>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <amount
+          [name]="fieldName('deductibleAmount')"
+          [(ngModel)]="insuranceInfo.deductibleAmount"
+          [submitted]="submitted"
+          [separatorLimit]="99999.99"
+          [label]="'fields.Deductible' | translate"
+          [placeholder]="'fields.Deductible' | translate"
+          [allowZero]="true"
+          [required]="isRequired"
+          [disabled]="disableControl"
+        ></amount>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <datepicker
+          [name]="fieldName('startDate')"
+          [(ngModel)]="insuranceInfo.startDate"
+          [submitted]="submitted"
+          [label]="'fields.StartDate' | translate"
+          [placeholder]="'fields.StartDate' | translate"
+          (ngModelChange)="changeStartDate()"
+          [required]="isRequired"
+          [selectedValue]="insuranceInfo.startDate"
+          [showOnFocus]="false"
+          maxErrorMessage="common.validations.invalidStartDate"
+          (changeDate)="minMaxValidation()"
+          [disabled]="disableControl"
+        >
+        </datepicker>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <datepicker
+          *ngIf="enabled"
+          #endDate
+          [name]="fieldName('endDate')"
+          [(ngModel)]="insuranceInfo.endDate"
+          [min]="minDate"
+          [submitted]="submitted"
+          [label]="'fields.EndDate' | translate"
+          [minErrorMessage]="errorMsg"
+          [placeholder]="'fields.EndDate' | translate"
+          [required]="isRequired"
+          [selectedValue]="insuranceInfo.endDate"
+          [showOnFocus]="false"
+          maxErrorMessage="common.validations.invalidEndtDate"
+          [disabled]="disableControl"
+        >
+        </datepicker>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <individual-name
+          [name]="fieldName('agentName')"
+          [(ngModel)]="insuranceInfo.agentName"
+          [submitted]="false"
+          [label]="'fields.AgentName' | translate"
+          [placeholder]="'fields.AgentName' | translate"
+          [maxlength]="100"
+        >
+        </individual-name>
+      </div>
+      <div fxFlex="25%" fxFlex.lg="25%" fxFlex.md="50%" fxFlex.sm="50%" fxFlex.xs="100%">
+        <phone
+          [name]="fieldName('agentPhone')"
+          [(ngModel)]="insuranceInfo.agentPhone"
+          [submitted]="submitted"
+          [label]="'fields.AgentPhone' | translate"
+          [placeholder]="'fields.AgentPhone' | translate"
+          [maskedValue]="true"
+          [disabled]="disableControl"
+        >
+        </phone>
+      </div>
+    </div>
+  </fieldset>
+</form>

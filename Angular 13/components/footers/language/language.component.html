@@ -1,0 +1,6 @@
+
+<select #languageControl (change)="changeLanguage(languageControl.value)" *ngIf="hideButton">
+  <option *ngFor="let language of languageOptions" [value]="language.value" [selected]="language.value === activeLanguage">{{language.text}}</option>
+</select>
+
+  
